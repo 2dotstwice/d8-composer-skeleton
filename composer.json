@@ -1,0 +1,47 @@
+{
+    "name": "twodotstwice/d8-composer-skeleton",
+    "description": "Skeleton to setup a new Drupal 8 project using Composer and drupal-composer/drupal-scaffold.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bert Ramakers",
+            "role": "developer",
+            "email": "bert@2dotstwice.be"
+        }
+    ],
+    "require": {
+        "composer/installers": "^1.0.20",
+        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "drupal/core": "~8.1",
+        "drupal/devel": "1.x-dev"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    ],
+    "replace": {
+        "drupal/drupal": "*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "installer-paths": {
+            "web/core": ["type:drupal-core"],
+            "web/modules/contrib/{$name}": ["type:drupal-module"],
+            "web/modules/shared/{$name}": ["type:drupal-custom-module"],
+            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+            "web/themes/contrib/{$name}": ["type:drupal-theme"],
+            "web/themes/shared/{$name}": ["type:drupal-custom-theme"],
+            "drush/contrib/{$name}": ["type:drupal-drush"]
+        }
+    },
+    "scripts": {
+        "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    },
+    "config": {
+        "process-timeout": 1200
+    }
+}
