@@ -1,7 +1,11 @@
 vendor
 
 # Ignore everything in ./web/, except for anything inside ./web/modules/custom/
+# or ./web/themes/custom/
 web/*
 !web/modules
+!web/themes
 web/modules/*
+web/themes/*
 !web/modules/custom
+!web/themes/custom
