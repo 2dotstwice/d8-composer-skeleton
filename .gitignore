@@ -1,0 +1,7 @@
+vendor
+
+# Ignore everything in ./web/, except for anything inside ./web/modules/custom/
+web/*
+!web/modules
+web/modules/*
+!web/modules/custom
