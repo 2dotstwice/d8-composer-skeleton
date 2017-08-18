@@ -43,6 +43,15 @@ To download extra contrib modules or themes (hosted on [drupal.org](http://www.d
             "drupal/module-or-theme-name": "~1.0"
         }
         
+Alternatively, you can add them as dev dependencies if they're only required on dev or test environments.
+
+For example:
+
+        "require-dev": {
+            ...
+            "drupal/devel": "~1.1"
+        }
+        
 Afterwards, run `composer update drupal/module-or-theme-name` to download the new module or theme, and all of its dependencies.
         
 Contrib modules and themes are downloaded in the following locations respectively:
