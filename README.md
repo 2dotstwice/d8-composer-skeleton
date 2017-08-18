@@ -36,23 +36,25 @@ The docroot of your vhost should point to the included `web` directory. This is 
 
 # Contrib modules and themes
 
-To install extra contrib modules or themes (hosted on [drupal.org](http://www.drupal.org)), simply add them to the list of Composer dependencies:
+To download extra contrib modules or themes (hosted on [drupal.org](http://www.drupal.org)), simply add them to the list of Composer dependencies:
 
         "require": {
             ...
-            "drupal/devel": "1.x-dev"
+            "drupal/module-or-theme-name": "~1.0"
         }
         
-Contrib modules and themes are installed in the following locations respectively:
+Afterwards, run `composer update drupal/module-or-theme-name` to download the new module or theme, and all of its dependencies.
+        
+Contrib modules and themes are downloaded in the following locations respectively:
 
 * `web/modules/contrib`
 * `web/themes/contrib`
     
-Contrib modules and themes are not tracked by git. You should always update or re-install them using `composer update` or `composer install` (depending on the situation).
+Contrib modules and themes are not tracked by git. You should always update or re-download them using `composer update` or `composer install` (depending on the situation).
 
 # Custom modules and themes
 
-You can store custom modules and themes respectively in the following locations:
+You can store project-specific modules and themes in the following locations respectively:
 
 * `web/modules/custom`
 * `web/themes/custom`
@@ -61,7 +63,7 @@ While generally everything inside `web` is ignored by git, these two locations a
 
 # Private modules and themes
 
-You can install custom modules and themes stored in a private git repository using Composer.
+You can download custom modules and themes stored in a private git repository using Composer.
 
 To do so, add the module or theme as a dependency in `composer.json`, and add the private repository so Composer knows where to download the code from:
 
@@ -92,11 +94,13 @@ For example:
         }
     }
     
-Private modules and themes are installed in the following locations respectively:
+Afterwards, run `composer update vendor/my-custom-module` to download the new module or theme, and all of its dependencies.
+    
+Private modules and themes are downloaded to the following locations respectively:
 
 * `web/modules/private`
 * `web/themes/private`
 
-Alternatively, you can install your private modules and themes in the same location as contrib modules and themes by setting the package type of your module or theme to `drupal-module` or `drupal-theme` respectively.
+Alternatively, you can download your private modules and themes in the same location as contrib modules and themes by setting the package type of your module or theme to `drupal-module` or `drupal-theme` respectively.
  
-Private modules and themes are not tracked by git. You should always update or re-install them using `composer update` or `composer install` (depending on the situation).
+Private modules and themes are not tracked by git. You should always update or re-download them using `composer update` or `composer install` (depending on the situation).
