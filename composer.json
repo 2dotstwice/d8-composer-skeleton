@@ -31,10 +31,10 @@
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/modules/shared/{$name}": ["type:drupal-custom-module"],
+            "web/modules/private/{$name}": ["type:drupal-custom-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
             "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "web/themes/shared/{$name}": ["type:drupal-custom-theme"],
+            "web/themes/private/{$name}": ["type:drupal-custom-theme"],
             "drush/contrib/{$name}": ["type:drupal-drush"]
         }
     },
