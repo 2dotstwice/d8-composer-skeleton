@@ -1,3 +1,6 @@
+# Remove composer.lock if you want to fix your dependencies to a specific version.
+composer.lock
+
 vendor
 
 # Ignore everything in ./web/, except for anything inside ./web/modules/custom/
