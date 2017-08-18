@@ -5,12 +5,12 @@ This is a skeleton project meant to help you set up a new Drupal 8 project quick
 # Creating a fork
 
 Because this skeleton is meant to help you get started once, any changes you make later should have no effect on the skeleton itself. 
-Because of this you should create a fork of this repository.
+Because of this you should create a fork of this repository, which will then serve as the repository of your new project.
 
-After doing so, remove the included `.git` directory to delete the commit history, and run `git init` to set up a new git repository.
+To do so, clone this repository and remove the included `.git` directory to delete the commit history. Afterwards, run `git init` to set up the project as a new git repository.
 
-Lastly, remove the `composer.lock` entry from the included `.gitignore` file so the `composer.lock` file that will be generated later can be added to your new git repository. 
-(It's ignored by default so it would never get committed to the skeleton itself by accident.)
+It is also recommended remove the `composer.lock` entry from the included `.gitignore` file so the `composer.lock` file that will be generated later can be added to your project's new git repository. 
+We ignore it by default so it would never get committed to the skeleton itself by accident, but it is considered best practice to always commit your `composer.lock` file in the actual Drupal 8 project itself.
 
 # Installing dependencies
 
@@ -20,11 +20,15 @@ Next, install Drupal core and any other dependencies using Composer:
     
 If this is the first time you run `composer install` in the cloned repository, a new `composer.lock` file will be generated. Now would be a good time to commit it to your own repository.
 
-Note that both Drupal core, and any other dependencies that were installed, are not tracked by git. Instead, you should always run `composer install` whenever you clone your repository.
+Note that both Drupal core, and any other dependencies that were installed, are not tracked by git. Instead, you should always run `composer install` whenever you make a new clone of your project's repository.
 
-In case you run `composer install` when you already have a `composer.lock` file, you have to scaffold some Drupal files manually by running the following command afterwards:
+In case you run `composer install` when you already have a `composer.lock` file, you have to scaffold some Drupal files manually by running the following command after running `composer install`:
 
     composer drupal-scaffold
+    
+Or, you can turn it into a one-liner like this:
+
+    composer install && composer drupal-scaffold
     
 # Configuring the vhost
 
@@ -44,7 +48,7 @@ Contrib modules and themes are installed in the following locations respectively
 * `web/modules/contrib`
 * `web/themes/contrib`
     
-Contrib modules and themes are not tracked by git. You should always update or re-install them using `composer install`.
+Contrib modules and themes are not tracked by git. You should always update or re-install them using `composer update` or `composer install` (depending on the situation).
 
 # Custom modules and themes
 
@@ -90,7 +94,9 @@ For example:
     
 Private modules and themes are installed in the following locations respectively:
 
-* web/modules/private
-* web/themes/private
+* `web/modules/private`
+* `web/themes/private`
+
+Alternatively, you can install your private modules and themes in the same location as contrib modules and themes by setting the package type of your module or theme to `drupal-module` or `drupal-theme` respectively.
  
-Private modules and themes are not tracked by git. You should always update or re-install them using `composer install`.
+Private modules and themes are not tracked by git. You should always update or re-install them using `composer update` or `composer install` (depending on the situation).
