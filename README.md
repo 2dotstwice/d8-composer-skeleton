@@ -38,19 +38,19 @@ The docroot of your vhost should point to the included `web` directory. This is 
 
 To download extra contrib modules or themes (hosted on [drupal.org](http://www.drupal.org)), simply add them to the list of Composer dependencies:
 
-        "require": {
-            ...
-            "drupal/module-or-theme-name": "~1.0"
-        }
+    "require": {
+        ...
+        "drupal/module-or-theme-name": "~1.0"
+    }
         
 Alternatively, you can add them as dev dependencies if they're only required on dev or test environments.
 
 For example:
 
-        "require-dev": {
-            ...
-            "drupal/devel": "~1.1"
-        }
+    "require-dev": {
+        ...
+        "drupal/devel": "~1.1"
+    }
         
 Afterwards, run `composer update drupal/module-or-theme-name` to download the new module or theme, and all of its dependencies.
         
