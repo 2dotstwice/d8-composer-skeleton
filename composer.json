@@ -13,7 +13,13 @@
     "require": {
         "composer/installers": "^1.0.20",
         "drupal-composer/drupal-scaffold": "^2.0.1",
-        "drupal/core": "~8.1"
+        "drupal/admin_toolbar": "^1.19",
+        "drupal/config_split": "^1.0@beta",
+        "drupal/cookieconsent": "^1.2",
+        "drupal/core": "~8.1",
+        "drupal/pathauto": "^1.0",
+        "drupal/swiftmailer": "^1.0@beta",
+        "drupal/twig_field_value": "^1.1"
     },
     "require-dev": {
         "drupal/devel": "1.x-dev"
